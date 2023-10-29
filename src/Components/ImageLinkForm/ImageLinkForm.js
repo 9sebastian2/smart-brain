@@ -7,7 +7,7 @@ const ImageLinkForm = () => {
                 {'This magic brain will detect faces in pictures you upload'}
             </p>
             <input className='f4 pa2 w-70 center' type='text' />
-            <button>Detect</button>
+            <button className='f4 pa2 w-25 center'>Detect</button>
 
         </div>
     );
