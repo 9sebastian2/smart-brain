@@ -10,7 +10,7 @@ function App() {
       <Logo />
       <ImageLinkForm />
       {/* 
-      <FaceRecognition/>} */}
+      <FaceRecognition />} */}
     </div>
   );
 }
