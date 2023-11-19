@@ -1,14 +1,4 @@
-import './App.css';
-import { useCallback } from "react";
-import { loadSlim } from "tsparticles-slim";
-import Navigation from './Components/Navigation/Navigation';
-import Particles from "react-tsparticles";
-import Logo from './Components/Logo/Logo';
-import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
-import Rank from './Components/Rank/Rank';
-
-function App() {
-  const particlesInit = useCallback(async engine => {
+const particlesInit = useCallback(async engine => {
     console.log(engine);
     await loadSlim(engine);
   }, []);
@@ -36,7 +26,7 @@ function App() {
                 quantity: 4,
             },
             repulse: {
-                distance: 110,
+                distance: 200,
                 duration: 0.4,
             },
         },
@@ -59,7 +49,7 @@ function App() {
                 default: "bounce",
             },
             random: false,
-            speed: 2,
+            speed: 4,
             straight: false,
         },
         number: {
@@ -67,28 +57,17 @@ function App() {
                 enable: true,
                 area: 800,
             },
-            value: 175,
+            value: 120,
+        },
+        opacity: {
+            value: 0.5,
+        },
+        shape: {
+            type: "circle",
+        },
+        size: {
+            value: { min: 1, max: 5 },
         },
     },
     detectRetina: true,
-  }
-  return (
-    <div className="App">
-          <Navigation />
-          <Logo />
-          <Rank />
-          <ImageLinkForm />
-          {/* 
-          <FaceRecognition />} */}
-      <Particles
-          className='particles'
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={particlesOptions}
-      />
-    </div>
-  );
 }
-
-export default App;
