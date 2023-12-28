@@ -3,9 +3,15 @@ import { useCallback, useState } from "react";
 import { loadSlim } from "tsparticles-slim";
 import Navigation from './Components/Navigation/Navigation';
 import Particles from "react-tsparticles";
+// import Clarifai from "clarifai";
 import Logo from './Components/Logo/Logo';
+import FaceRecognition from './Components/FaceRecognition/FaceRecognition';
 import ImageLinkForm from './Components/ImageLinkForm/ImageLinkForm';
 import Rank from './Components/Rank/Rank';
+
+// const app = new Clarifai.App({
+//     apiKey: '61b2cfdc15394082bdd348b67509956a'
+//    });
 
 function App() {
     const [input, setInput] = useState('')
@@ -90,15 +96,14 @@ function App() {
           <Logo />
           <Rank />
           <ImageLinkForm onInputChange={onInputChange} onButtonSubmit={onButtonSubmit}/>
-          {/* 
-          <FaceRecognition />} */}
-      <Particles
-          className='particles'
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={particlesOptions}
-      />
+          <FaceRecognition />
+          <Particles
+                className='particles'
+                id="tsparticles"
+                init={particlesInit}
+                loaded={particlesLoaded}
+                options={particlesOptions}
+          />
     </div>
   );
 }
